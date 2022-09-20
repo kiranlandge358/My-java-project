@@ -2,7 +2,10 @@ package com.mini.group;
 
  
 import java.sql.Connection;
+import java.sql.ParameterMetaData;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -19,13 +22,19 @@ public class GetProductDetails extends  AdminDetails{
 			ps.setString(3, description);
 			ps.setLong(4, price);
 			ps.setLong(5, quantity);
+			//ResultSet resultSet = ps.getResultSet();
+			 //ParameterMetaData data = ps.getParameterMetaData();
+			 //System.out.println(data);
 			int executeUpdate = ps.executeUpdate();
 			System.out.println(executeUpdate);
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		 
+	}
+	@Override
+	public String toString() {
+		return "GetProductDetails [ps=" + ps + "]";
 	}
 	public void setProductDetails() throws SQLException
 	{ 
@@ -34,7 +43,7 @@ public class GetProductDetails extends  AdminDetails{
 		try {
 			sc=new Scanner(System.in); 
 		  details=new GetProductDetails();
-		for(int i=0;i<4;i++)
+		for(int i=0;i<1;i++)
 		{
 			
 			System.out.println("Enter Product id:");

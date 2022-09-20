@@ -35,6 +35,7 @@ public class DisplayDetails {
 		 else if(a==3)
 		 {
 			 del.setProductDetails();
+			 del.toString();
 		 }
 		 else if(a==4)
 		 {
